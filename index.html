@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>María Soldilon — Muralista · Pintora · Diseñadora</title>
+  <meta name="description" content="María Soldilon pinta murales, obras y diseños a mano. Transformá tu espacio: pedí un presupuesto para tu proyecto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav">
+    <a class="nav__logo" href="#inicio">María Soldilon</a>
+    <nav class="nav__links">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto" class="nav__cta">Pedir presupuesto</a>
+    </nav>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" id="inicio">
+    <p class="hero__kicker">Muralista · Pintora · Diseñadora</p>
+    <h1 class="hero__title">Pinto historias<br>sobre <em>muros</em>.</h1>
+    <p class="hero__sub">Murales a mano, pintura y diseño para empresas y particulares<br>que quieren que sus espacios digan algo.</p>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Deslizá para ver cómo nacen</span>
+      <div class="hero__arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ ESCENA SCROLL: de su cabeza salen creaciones ══════════ -->
+  <!--
+    Cuando tengas el video real de María, ponelo en assets/proceso.mp4
+    y en js/main.js cambiá:  const VIDEO_SRC = 'assets/proceso.mp4';
+    El video se "reproduce" al ritmo del scroll. Mientras tanto se
+    muestra esta animación ilustrada.
+  -->
+  <section class="scene" id="proceso">
+    <div class="scene__sticky">
+      <video class="scene__video" muted playsinline preload="auto" hidden></video>
+
+      <svg class="scene__svg" viewBox="0 0 1200 700" fill="none" aria-label="Ilustración: de la cabeza de María nacen creaciones">
+        <!-- perfil / cabeza -->
+        <g class="sc-head">
+          <path d="M 430 640 C 428 560 420 500 415 460 C 408 408 418 350 452 310 C 478 279 516 260 556 260 C 610 260 656 296 672 348 C 678 368 679 388 675 408 L 700 452 C 704 460 700 468 691 470 L 672 474 L 676 508 C 677 520 668 530 656 530 L 630 530 L 632 566 C 633 596 618 618 590 626 C 570 632 550 636 536 640 Z" fill="var(--ink)"/>
+          <!-- rodete -->
+          <circle cx="470" cy="252" r="46" fill="var(--ink)"/>
+        </g>
+
+        <!-- creaciones que emergen de la cabeza (origen ~ 540,250) -->
+        <g class="sc-el" data-i="0" data-tx="660" data-ty="120" data-r="18">
+          <path d="M0 0 C 30 -18 70 -14 96 8 C 70 22 34 22 8 10 Z" fill="var(--acc1)"/>
+        </g>
+        <g class="sc-el" data-i="1" data-tx="800" data-ty="210" data-r="-12">
+          <!-- pájaro -->
+          <path d="M0 10 C 14 -6 34 -8 46 2 C 38 4 34 8 32 14 C 24 24 8 24 0 10 Z" fill="var(--acc2)"/>
+          <circle cx="42" cy="4" r="2.6" fill="var(--ink)"/>
+        </g>
+        <g class="sc-el" data-i="2" data-tx="560" data-ty="60" data-r="0">
+          <!-- flor -->
+          <g fill="var(--acc3)">
+            <ellipse cx="0" cy="-16" rx="9" ry="15"/><ellipse cx="0" cy="16" rx="9" ry="15"/>
+            <ellipse cx="-16" cy="0" rx="15" ry="9"/><ellipse cx="16" cy="0" rx="15" ry="9"/>
+          </g>
+          <circle r="8" fill="var(--ink)"/>
+        </g>
+        <g class="sc-el" data-i="3" data-tx="920" data-ty="120" data-r="24">
+          <!-- espiral -->
+          <path d="M 0 0 C 22 -2 30 18 16 28 C 4 36 -12 28 -10 14 C -8 4 2 0 8 6" stroke="var(--acc1)" stroke-width="7" stroke-linecap="round"/>
+        </g>
+        <g class="sc-el" data-i="4" data-tx="740" data-ty="40" data-r="-20">
+          <!-- estrella -->
+          <path d="M 0 -18 L 5 -5 L 18 -4 L 8 5 L 11 18 L 0 11 L -11 18 L -8 5 L -18 -4 L -5 -5 Z" fill="var(--acc4)"/>
+        </g>
+        <g class="sc-el" data-i="5" data-tx="1000" data-ty="260" data-r="8">
+          <!-- pincelada larga -->
+          <path d="M 0 8 C 40 -10 90 -6 130 10 C 92 24 42 26 0 8 Z" fill="var(--acc2)"/>
+        </g>
+        <g class="sc-el" data-i="6" data-tx="860" data-ty="360" data-r="0">
+          <!-- gota de pintura -->
+          <path d="M 0 -20 C 12 -4 16 6 16 14 C 16 24 9 30 0 30 C -9 30 -16 24 -16 14 C -16 6 -12 -4 0 -20 Z" fill="var(--acc3)"/>
+        </g>
+        <g class="sc-el" data-i="7" data-tx="620" data-ty="180" data-r="-6">
+          <!-- ola -->
+          <path d="M 0 0 Q 12 -14 24 0 T 48 0 T 72 0" stroke="var(--acc4)" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <g class="sc-el" data-i="8" data-tx="960" data-ty="60" data-r="12">
+          <circle r="10" fill="var(--acc1)"/>
+        </g>
+        <g class="sc-el" data-i="9" data-tx="1060" data-ty="160" data-r="-16">
+          <!-- luna -->
+          <path d="M 6 -16 A 17 17 0 1 0 16 8 A 13 13 0 1 1 6 -16 Z" fill="var(--acc2)"/>
+        </g>
+      </svg>
+
+      <p class="scene__caption" data-step="0">De la cabeza de María…</p>
+      <p class="scene__caption" data-step="1">…nacen ideas, colores, personajes…</p>
+      <p class="scene__caption" data-step="2">…que terminan viviendo en tus muros.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ TRABAJOS ══════════ -->
+  <section class="works" id="trabajos">
+    <h2 class="sec-title reveal">Trabajos</h2>
+    <p class="sec-sub reveal">Una selección de murales, pinturas y diseños.</p>
+
+    <!-- Reemplazá cada .work__ph por <img src="assets/trabajos/…jpg" alt="…"> -->
+    <div class="works__grid">
+      <figure class="work reveal work--wide">
+        <div class="work__ph ph-1"><span>Foto del mural</span></div>
+        <figcaption><strong>Mural — fachada</strong><span>Acrílico exterior · 12 m</span></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="work__ph ph-2"><span>Foto del mural</span></div>
+        <figcaption><strong>Mural — café</strong><span>Interior · pared completa</span></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="work__ph ph-3"><span>Foto de la obra</span></div>
+        <figcaption><strong>Pintura</strong><span>Óleo sobre lienzo</span></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="work__ph ph-4"><span>Foto del diseño</span></div>
+        <figcaption><strong>Diseño — identidad</strong><span>Ilustración para marca</span></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="work__ph ph-5"><span>Foto del mural</span></div>
+        <figcaption><strong>Mural — oficina</strong><span>Espacio de trabajo</span></figcaption>
+      </figure>
+      <figure class="work reveal work--wide">
+        <div class="work__ph ph-6"><span>Foto del mural</span></div>
+        <figcaption><strong>Mural — habitación infantil</strong><span>Particular · pintura a mano</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICIOS ══════════ -->
+  <section class="services" id="servicios">
+    <h2 class="sec-title reveal">¿Qué puedo hacer por tu espacio?</h2>
+    <div class="services__grid">
+      <article class="service service--star reveal">
+        <span class="service__tag">Lo que más amo</span>
+        <h3>Murales pintados a mano</h3>
+        <p>Fachadas, locales, oficinas, habitaciones. Un dibujo pensado para tu muro, pintado en el lugar, que convierte una pared en el alma del espacio.</p>
+      </article>
+      <article class="service reveal">
+        <h3>Pintura</h3>
+        <p>Obras sobre lienzo y piezas por encargo, para colecciones, regalos o ambientes que necesitan una pieza única.</p>
+      </article>
+      <article class="service reveal">
+        <h3>Diseño e ilustración</h3>
+        <p>Ilustraciones para marcas, vidrieras, packaging y gráficas que llevan un trazo humano a tu comunicación.</p>
+      </article>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step"><span>1</span><p>Me contás tu idea<br>y tu espacio</p></div>
+      <div class="step"><span>2</span><p>Te envío propuesta<br>y presupuesto</p></div>
+      <div class="step"><span>3</span><p>Boceto aprobado,<br>¡a pintar!</p></div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACTO ══════════ -->
+  <section class="contact" id="contacto">
+    <h2 class="contact__title reveal">¿Tenés un muro<br>esperando una historia?</h2>
+    <p class="contact__sub reveal">Contame tu proyecto y te envío una propuesta con presupuesto, sin compromiso.</p>
+    <!-- Reemplazá el mail por el real de María -->
+    <a class="contact__btn reveal" href="mailto:hola@mariasoldilon.com?subject=Pedido%20de%20presupuesto%20—%20proyecto%20de%20mural">Pedir presupuesto</a>
+    <div class="contact__links reveal">
+      <a href="mailto:hola@mariasoldilon.com">hola@mariasoldilon.com</a>
+      <span>·</span>
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> María Soldilon — Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
