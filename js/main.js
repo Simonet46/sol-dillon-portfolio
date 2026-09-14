@@ -4,7 +4,7 @@
    Cuando tengan el video de María, guardarlo en assets/proceso.mp4
    y poner:  const VIDEO_SRC = 'assets/proceso.mp4';
    El video avanza al ritmo del scroll y reemplaza la ilustración. */
-const VIDEO_SRC = null;
+const VIDEO_SRC = 'assets/proceso.mp4';
 
 const scene = document.querySelector('.scene');
 const sceneSvg = document.querySelector('.scene__svg');
@@ -12,10 +12,20 @@ const sceneVideo = document.querySelector('.scene__video');
 const elements = [...document.querySelectorAll('.sc-el')];
 const captions = [...document.querySelectorAll('.scene__caption')];
 
+let videoActive = false;
 if (VIDEO_SRC) {
   sceneVideo.src = VIDEO_SRC;
-  sceneVideo.hidden = false;
-  sceneSvg.style.display = 'none';
+  sceneVideo.addEventListener('loadedmetadata', () => {
+    videoActive = true;
+    sceneVideo.hidden = false;
+    sceneSvg.style.display = 'none';
+    renderScene();
+  });
+  sceneVideo.addEventListener('error', () => {
+    videoActive = false;
+    sceneVideo.hidden = true;
+    sceneSvg.style.display = '';
+  });
 }
 
 /* origen: la cabeza de María dentro del viewBox del SVG */
@@ -32,7 +42,7 @@ function sceneProgress() {
 function renderScene() {
   const p = sceneProgress();
 
-  if (VIDEO_SRC && sceneVideo.duration) {
+  if (videoActive && sceneVideo.duration) {
     sceneVideo.currentTime = p * sceneVideo.duration;
   } else {
     elements.forEach(el => {
