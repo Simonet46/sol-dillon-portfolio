@@ -1,10 +1,9 @@
-/* María Soldilon — interacciones */
+/* Sol Dillon — interacciones */
 
-/* ── Video real (opcional) ─────────────────────────────
-   Cuando tengan el video de María, guardarlo en assets/proceso.mp4
-   y poner:  const VIDEO_SRC = 'assets/proceso.mp4';
-   El video avanza al ritmo del scroll y reemplaza la ilustración. */
-const VIDEO_SRC = 'assets/proceso.mp4';
+/* ── Video de la escena ─────────────────────────────────
+   El video (1080p, all-intra, sin audio) avanza al ritmo del scroll.
+   Para reemplazarlo: sobrescribir assets/proceso.mp4 y subir el ?v=. */
+const VIDEO_SRC = 'assets/proceso.mp4?v=6';
 
 const scene = document.querySelector('.scene');
 const sceneSvg = document.querySelector('.scene__svg');
