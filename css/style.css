@@ -205,6 +205,46 @@ body {
 
 .footer { padding: 2rem 6vw; text-align: center; color: var(--mut); font-size: .78rem; border-top: 1px solid var(--line); }
 
+/* ── Page devis ── */
+.devis { max-width: 760px; margin: 0 auto; padding: 10rem 6vw 7rem; }
+.devis .sec-title { text-align: center; }
+.devis .sec-title em { font-style: italic; color: var(--acc1); }
+.devis__sub { text-align: center; color: var(--mut); margin: 1.2rem 0 3.5rem; }
+.devis__form { display: flex; flex-direction: column; gap: 1.4rem; }
+.devis__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.devis__form label {
+  display: flex; flex-direction: column; gap: .45rem;
+  font-size: .85rem; font-weight: 500; letter-spacing: .02em;
+}
+.devis__opt { color: var(--mut); font-weight: 300; }
+.devis__form input, .devis__form select, .devis__form textarea {
+  font: inherit; font-weight: 300; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: .8rem 1rem; outline: none; transition: border-color .2s;
+}
+.devis__form input:focus, .devis__form select:focus, .devis__form textarea:focus {
+  border-color: var(--acc1);
+}
+.devis__form textarea { resize: vertical; }
+.devis__submit { align-self: center; margin-top: 1.2rem; border: none; cursor: pointer; font-family: var(--sans); }
+.devis__result { text-align: center; }
+.devis__result h2 { font-family: var(--serif); font-weight: 500; font-size: 1.8rem; margin-bottom: 1rem; }
+.devis__result p { color: var(--mut); max-width: 46ch; margin: 0 auto 1.6rem; }
+.devis__result textarea {
+  width: 100%; font: inherit; font-weight: 300; font-size: .9rem; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 1rem 1.2rem; resize: vertical;
+}
+.devis__actions { margin-top: 1.6rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.devis__actions .contact__btn { margin-top: 0; border: none; cursor: pointer; font-family: var(--sans); }
+.devis__mailto { color: var(--mut); font-size: .85rem; }
+.devis__copy-mini {
+  font: inherit; font-size: .75rem; color: var(--acc2);
+  background: none; border: 1px solid var(--line); border-radius: 99px;
+  padding: .15rem .7rem; cursor: pointer; margin: 0 .3rem;
+}
+.devis__copied { color: var(--acc4); font-weight: 500; margin-top: 1rem; }
+
 /* ── Reveal on scroll ── */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .reveal.is-in { opacity: 1; transform: none; }
@@ -220,6 +260,7 @@ body {
   .services__grid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; gap: 2.5rem; }
   .about__photo { max-width: 420px; }
+  .devis__row { grid-template-columns: 1fr; }
   .scene { height: 260vh; }
   .steps { flex-direction: column; gap: 2rem; }
   .scene__caption { white-space: normal; text-align: center; width: 90vw; }

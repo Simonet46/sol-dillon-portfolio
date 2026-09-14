@@ -15,10 +15,12 @@ const captions = [...document.querySelectorAll('.scene__caption')];
 let videoActive = false;
 if (VIDEO_SRC) {
   sceneVideo.src = VIDEO_SRC;
+  sceneVideo.load();
+  /* el poster se ve de inmediato mientras el video termina de cargar */
+  sceneVideo.hidden = false;
+  sceneSvg.style.display = 'none';
   sceneVideo.addEventListener('loadedmetadata', () => {
     videoActive = true;
-    sceneVideo.hidden = false;
-    sceneSvg.style.display = 'none';
     renderScene();
   });
   sceneVideo.addEventListener('error', () => {
@@ -43,7 +45,9 @@ function renderScene() {
   const p = sceneProgress();
 
   if (videoActive && sceneVideo.duration) {
-    sceneVideo.currentTime = p * sceneVideo.duration;
+    const t = p * sceneVideo.duration;
+    /* evita saturar a Safari con seeks más finos que un frame */
+    if (Math.abs(sceneVideo.currentTime - t) > 0.034) sceneVideo.currentTime = t;
   } else {
     elements.forEach(el => {
       const i = +el.dataset.i;

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demander un devis — Sol Dillon</title>
+  <meta name="description" content="Décrivez votre projet à Sol Dillon — fresque murale, illustration, design textile ou identité visuelle — et recevez une proposition avec devis, sans engagement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+
+  <header class="nav is-scrolled">
+    <a class="nav__logo" href="index.html">Sol Dillon</a>
+    <nav class="nav__links">
+      <a href="index.html#realisations">Réalisations</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#expertise">Expertise</a>
+    </nav>
+  </header>
+
+  <main class="devis">
+    <h1 class="sec-title">Parlez-moi de<br>votre <em>projet</em>.</h1>
+    <p class="devis__sub">Quelques questions pour bien comprendre votre idée —<br>je vous réponds avec une proposition et un devis, sans engagement.</p>
+
+    <form class="devis__form" id="devisForm">
+      <div class="devis__row">
+        <label>Votre nom
+          <input type="text" name="nom" required placeholder="Prénom et nom">
+        </label>
+        <label>Votre email
+          <input type="email" name="email" required placeholder="vous@exemple.fr">
+        </label>
+      </div>
+
+      <div class="devis__row">
+        <label>Type de projet
+          <select name="type" required>
+            <option value="" disabled selected>Choisissez…</option>
+            <option>Fresque murale</option>
+            <option>Illustration personnalisée</option>
+            <option>Design textile &amp; patterns</option>
+            <option>Identité visuelle &amp; packaging</option>
+            <option>Peinture / œuvre sur toile</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <label>Ville / lieu du projet
+          <input type="text" name="lieu" placeholder="Paris, Lyon…">
+        </label>
+      </div>
+
+      <label>Décrivez votre projet
+        <textarea name="description" rows="6" required placeholder="L'espace ou le support, les dimensions approximatives, l'ambiance ou les couleurs souhaitées, vos délais…"></textarea>
+      </label>
+
+      <div class="devis__row">
+        <label>Budget approximatif <span class="devis__opt">(optionnel)</span>
+          <select name="budget">
+            <option value="" selected>Je ne sais pas encore</option>
+            <option>Moins de 500 €</option>
+            <option>500 – 1 500 €</option>
+            <option>1 500 – 3 000 €</option>
+            <option>Plus de 3 000 €</option>
+          </select>
+        </label>
+        <label>Délai souhaité <span class="devis__opt">(optionnel)</span>
+          <input type="text" name="delai" placeholder="Ex. : avant décembre">
+        </label>
+      </div>
+
+      <button type="submit" class="contact__btn devis__submit">Préparer ma demande</button>
+    </form>
+
+    <!-- panneau résultat -->
+    <div class="devis__result" id="devisResult" hidden>
+      <h2>Votre demande est prête&nbsp;✨</h2>
+      <p>Copiez le message ci-dessous et envoyez-le à
+        <strong id="mailTxt">soldillon@hotmail.com</strong>
+        <button type="button" class="devis__copy-mini" id="copyMail">copier l'adresse</button>
+        depuis votre messagerie, ou écrivez-moi sur
+        <a href="https://instagram.com/arttsd" target="_blank" rel="noopener">Instagram&nbsp;@ARTTSD</a>.
+      </p>
+      <textarea id="msgOut" rows="12" readonly></textarea>
+      <div class="devis__actions">
+        <button type="button" class="contact__btn" id="copyMsg">Copier le message</button>
+        <a class="devis__mailto" id="mailtoLink" href="#">ou ouvrir dans mon application mail</a>
+      </div>
+      <p class="devis__copied" id="copiedNote" hidden>Copié&nbsp;! ✔</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Sol Dillon — Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('devisForm');
+    const result = document.getElementById('devisResult');
+    const msgOut = document.getElementById('msgOut');
+    const EMAIL = 'soldillon@hotmail.com';
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(form).entries());
+      const lines = [
+        `Bonjour Sol,`,
+        ``,
+        `Je souhaite vous demander un devis pour un projet.`,
+        ``,
+        `— Nom : ${d.nom}`,
+        `— Email : ${d.email}`,
+        `— Type de projet : ${d.type}`,
+        d.lieu ? `— Lieu : ${d.lieu}` : null,
+        d.budget ? `— Budget approximatif : ${d.budget}` : null,
+        d.delai ? `— Délai souhaité : ${d.delai}` : null,
+        ``,
+        `Description du projet :`,
+        d.description,
+        ``,
+        `Merci d'avance !`,
+      ].filter(l => l !== null);
+      msgOut.value = lines.join('\n');
+      const subject = encodeURIComponent(`Demande de devis — ${d.type}`);
+      document.getElementById('mailtoLink').href =
+        `mailto:${EMAIL}?subject=${subject}&body=${encodeURIComponent(msgOut.value)}`;
+      form.hidden = true;
+      result.hidden = false;
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    function flashCopied() {
+      const n = document.getElementById('copiedNote');
+      n.hidden = false;
+      clearTimeout(flashCopied.t);
+      flashCopied.t = setTimeout(() => { n.hidden = true; }, 2200);
+    }
+    document.getElementById('copyMsg').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(msgOut.value); } catch { msgOut.select(); document.execCommand('copy'); }
+      flashCopied();
+    });
+    document.getElementById('copyMail').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(EMAIL); } catch {}
+      flashCopied();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
