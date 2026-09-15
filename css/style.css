@@ -245,6 +245,20 @@ body {
   padding: .15rem .7rem; cursor: pointer; margin: 0 .3rem;
 }
 .devis__copied { color: var(--acc4); font-weight: 500; margin-top: 1rem; }
+.devis__form input[type="file"] {
+  padding: .6rem; background: transparent; border-style: dashed; cursor: pointer;
+}
+.devis__form input[type="file"]::file-selector-button {
+  font: inherit; font-size: .82rem; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 99px;
+  padding: .4rem 1rem; margin-right: 1rem; cursor: pointer;
+}
+.devis__files { color: var(--mut); font-weight: 300; font-size: .8rem; min-height: 1em; }
+.devis__error {
+  text-align: center; color: var(--acc1); font-size: .9rem;
+  border: 1px solid color-mix(in srgb, var(--acc1) 40%, transparent);
+  border-radius: 8px; padding: .8rem 1.2rem;
+}
 
 /* ── Reveal on scroll ── */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
