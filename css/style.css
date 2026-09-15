@@ -12,6 +12,7 @@
   --acc3: #e8b62c;   /* ocre */
   --acc4: #2ba06b;   /* verde */
   --beige: #a68d63;  /* beige para palabras acentuadas */
+  --btn:   #6c543c;  /* marrón tierra tomado de los murales de Sol */
   --serif: "Fraunces", Georgia, serif;
   --sans:  "Inter", -apple-system, Helvetica, Arial, sans-serif;
 }
@@ -58,13 +59,13 @@ body {
 
 /* ── Hero ── */
 .hero {
-  min-height: 100svh;
+  min-height: 86svh;
   display: flex; flex-direction: column; justify-content: center; align-items: center;
-  text-align: center; padding: 6rem 6vw 4rem; position: relative;
+  text-align: center; padding: 7rem 6vw 5rem; position: relative;
 }
 .hero__kicker {
   font-size: .8rem; letter-spacing: .35em; text-transform: uppercase;
-  color: var(--mut); margin-bottom: 1.6rem;
+  color: var(--mut); margin-bottom: 1.1rem;
   animation: rise .9s .1s both cubic-bezier(.2,.7,.2,1);
 }
 .hero__title {
@@ -75,7 +76,7 @@ body {
 }
 .hero__title em { font-style: italic; color: var(--beige); }
 .hero__sub {
-  margin-top: 1.8rem; color: var(--mut); font-size: 1.02rem;
+  margin-top: 1.3rem; color: var(--mut); font-size: 1.02rem;
   animation: rise .9s .45s both cubic-bezier(.2,.7,.2,1);
 }
 @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
@@ -195,12 +196,12 @@ body {
 .contact__sub { color: var(--mut); margin-top: 1.4rem; }
 .contact__btn {
   display: inline-block; margin-top: 2.6rem;
-  background: var(--acc1); color: #fff; text-decoration: none;
+  background: var(--btn); color: #fff; text-decoration: none;
   font-weight: 500; font-size: 1rem; letter-spacing: .02em;
   padding: 1.1rem 2.8rem; border-radius: 99px;
   transition: transform .25s, box-shadow .25s;
 }
-.contact__btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px color-mix(in srgb, var(--acc1) 35%, transparent); }
+.contact__btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px color-mix(in srgb, var(--btn) 35%, transparent); }
 .contact__links { margin-top: 2.2rem; color: var(--mut); font-size: .9rem; display: flex; gap: .8rem; justify-content: center; }
 .contact__links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
 .contact__links a:hover { border-color: var(--ink); }
