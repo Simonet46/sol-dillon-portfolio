@@ -81,6 +81,33 @@ body {
 }
 @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 
+/* personajes ilustrados a los lados del hero */
+.hero__chars {
+  position: absolute; top: 50%;
+  display: flex; flex-direction: column; align-items: center; gap: 1.1rem;
+  width: clamp(90px, 8.6vw, 124px);
+}
+.hero__chars img:nth-child(2) { width: 88%; }
+@media (max-width: 1100px), (max-height: 620px) {
+  .hero__chars { display: none; }
+}
+.hero__chars--left  { left: clamp(1rem, 4vw, 5rem); transform: translateY(-50%) rotate(-2deg); }
+.hero__chars--right { right: clamp(1rem, 4vw, 5rem); transform: translateY(-50%) rotate(2deg); }
+.hero__chars img {
+  width: 100%; height: auto; display: block; border-radius: 10px;
+  opacity: 0; animation: charIn 1s both cubic-bezier(.2,.7,.2,1);
+}
+.hero__chars--left img:nth-child(1)  { animation-delay: .55s; transform: rotate(-2.5deg); }
+.hero__chars--left img:nth-child(2)  { animation-delay: .75s; transform: rotate(1.5deg) translateX(-8%); }
+.hero__chars--left img:nth-child(3)  { animation-delay: .95s; transform: rotate(-1.5deg); }
+.hero__chars--right img:nth-child(1) { animation-delay: .65s; transform: rotate(2deg); }
+.hero__chars--right img:nth-child(2) { animation-delay: .85s; transform: rotate(-1.5deg) translateX(8%); }
+.hero__chars--right img:nth-child(3) { animation-delay: 1.05s; transform: rotate(2.5deg); }
+@keyframes charIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; }
+}
+
 .hero__scroll {
   position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: .7rem;
