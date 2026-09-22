@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://simonet46.github.io/sol-dillon-portfolio/sitemap.xml
