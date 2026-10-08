@@ -148,11 +148,13 @@ body {
 .work figcaption span { color: var(--mut); font-size: .82rem; }
 
 /* déclinaisons de couleurs (variantes en una línea) */
-.variants { margin-top: 1.5rem; display: grid; gap: 2.4rem; }
+.variants { margin-top: 2.5rem; display: grid; gap: 3rem; }
 .variant { margin: 0; display: flex; flex-direction: column; gap: .7rem; }
-.variant__row { display: flex; gap: .9rem; }
+.variant__row { display: grid; gap: 1.4rem; }
+.variant--2 .variant__row { grid-template-columns: repeat(2, 1fr); }
+.variant--3 .variant__row { grid-template-columns: repeat(3, 1fr); }
 .variant__row img {
-  flex: 1 1 0; min-width: 0; width: 100%; max-width: 420px; height: auto; display: block;
+  width: 100%; height: auto; display: block;
   border-radius: 6px; transition: transform .5s cubic-bezier(.2,.7,.2,1);
 }
 .variant__row img:hover { transform: translateY(-4px); }
@@ -299,6 +301,7 @@ body {
   .about { grid-template-columns: 1fr; gap: 2.5rem; }
   .about__photo { max-width: 420px; }
   .devis__row { grid-template-columns: 1fr; }
+  .variant--3 .variant__row { grid-template-columns: repeat(2, 1fr); }
   .steps { flex-direction: column; gap: 2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
