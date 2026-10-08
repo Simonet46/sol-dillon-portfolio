@@ -59,9 +59,8 @@ body {
 
 /* ── Hero ── */
 .hero {
-  min-height: 86svh;
   display: flex; flex-direction: column; justify-content: center; align-items: center;
-  text-align: center; padding: 7rem 6vw 5rem; position: relative;
+  text-align: center; padding: 8.5rem 6vw 2.5rem; position: relative;
 }
 .hero__kicker {
   font-size: .8rem; letter-spacing: .35em; text-transform: uppercase;
@@ -130,7 +129,7 @@ body {
 .sec-sub { color: var(--mut); margin-top: .6rem; }
 
 /* ── Réalisations (masonry) ── */
-.works { padding: 8rem 6vw; max-width: 1300px; margin: 0 auto; }
+.works { padding: 4.5rem 6vw 8rem; max-width: 1300px; margin: 0 auto; }
 .works__grid {
   margin-top: 3.5rem;
   columns: 3; column-gap: 1.4rem;
