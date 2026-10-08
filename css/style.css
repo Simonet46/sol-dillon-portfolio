@@ -184,7 +184,7 @@ body {
   text-align: center;
 }
 .step span {
-  font-family: var(--hand); font-size: 2.6rem; color: var(--acc1);
+  font-family: var(--hand); font-size: 2.6rem; color: var(--beige);
   display: block; margin-bottom: .4rem;
 }
 .step p { font-size: .88rem; color: var(--mut); }
