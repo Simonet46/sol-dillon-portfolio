@@ -109,15 +109,6 @@ body {
   color: var(--mut); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
   animation: rise .9s .8s both cubic-bezier(.2,.7,.2,1);
 }
-.hero__arrow {
-  width: 1px; height: 44px; background: var(--mut); position: relative; overflow: hidden;
-}
-.hero__arrow::after {
-  content: ""; position: absolute; inset: 0;
-  background: var(--ink); transform: translateY(-100%);
-  animation: drip 1.8s infinite cubic-bezier(.4,0,.2,1);
-}
-@keyframes drip { 60%, 100% { transform: translateY(100%); } }
 
 /* ── Secciones ── */
 .sec-title {
