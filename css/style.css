@@ -122,26 +122,6 @@ body {
 }
 @keyframes drip { 60%, 100% { transform: translateY(100%); } }
 
-/* ── Escena scroll ── */
-.scene { height: 340vh; position: relative; }
-.scene__sticky {
-  position: sticky; top: 0; height: 100svh; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
-.scene__svg { width: min(1100px, 96vw); height: auto; display: block; }
-.scene__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.sc-el { opacity: 0; will-change: transform, opacity; }
-.scene__caption {
-  position: absolute; bottom: 9vh; left: 50%; transform: translate(-50%, 14px);
-  font-family: var(--serif); font-style: italic;
-  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
-  opacity: 0; transition: opacity .45s, transform .45s;
-  white-space: nowrap;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  padding: .15em .7em; border-radius: 99px;
-}
-.scene__caption.is-on { opacity: 1; transform: translate(-50%, 0); }
-
 /* ── Secciones ── */
 .sec-title {
   font-family: var(--serif); font-weight: 400;
@@ -304,9 +284,7 @@ body {
   .about { grid-template-columns: 1fr; gap: 2.5rem; }
   .about__photo { max-width: 420px; }
   .devis__row { grid-template-columns: 1fr; }
-  .scene { height: 260vh; }
   .steps { flex-direction: column; gap: 2rem; }
-  .scene__caption { white-space: normal; text-align: center; width: 90vw; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
