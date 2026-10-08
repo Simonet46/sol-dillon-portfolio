@@ -134,6 +134,17 @@ body {
   margin-top: 3.5rem;
   columns: 3; column-gap: 1.4rem;
 }
+.cat-nav { margin-top: 2.2rem; display: flex; flex-wrap: wrap; gap: .6rem 1.8rem; }
+.cat-nav a {
+  font-size: .74rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--mut); text-decoration: none; padding-bottom: .2rem;
+  border-bottom: 1px solid transparent; transition: color .2s, border-color .2s;
+}
+.cat-nav a:hover { color: var(--ink); border-color: var(--ink); }
+.cat { margin-top: 5.5rem; scroll-margin-top: 6rem; }
+.cat__title { font-family: var(--hand); font-weight: 400; font-size: clamp(2.1rem, 4.2vw, 3rem); }
+.cat__sub { color: var(--mut); margin-top: .2rem; }
+.cat .works__grid { margin-top: 2rem; }
 .work {
   display: flex; flex-direction: column; gap: .7rem;
   break-inside: avoid; margin: 0 0 2.2rem;
