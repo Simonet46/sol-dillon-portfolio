@@ -168,6 +168,10 @@ body {
 .works__grid--compact .work figcaption strong { font-size: .7rem; }
 .works__grid--compact .work figcaption span { font-size: .76rem; }
 
+/* dos imágenes verticales lado a lado en una tarjeta */
+.work__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.work__pair img { border-radius: 6px; }
+
 /* ── À propos ── */
 .about {
   padding: 7rem 6vw; max-width: 1100px; margin: 0 auto;
