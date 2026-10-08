@@ -211,7 +211,10 @@ body {
 .contact__links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
 .contact__links a:hover { border-color: var(--ink); }
 
-.footer { padding: 2rem 6vw; text-align: center; color: var(--mut); font-size: .78rem; border-top: 1px solid var(--line); }
+.footer { padding: 3rem 6vw 2.2rem; text-align: center; color: var(--mut); font-size: .74rem; border-top: 1px solid var(--line); }
+.footer__links { margin-bottom: .9rem; font-size: .8rem; display: flex; gap: .8rem; justify-content: center; }
+.footer__links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.footer__links a:hover { border-color: var(--ink); }
 
 /* ── Page devis ── */
 .devis { max-width: 760px; margin: 0 auto; padding: 10rem 6vw 7rem; }
