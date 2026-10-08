@@ -60,7 +60,7 @@ body {
 /* ── Hero ── */
 .hero {
   display: flex; flex-direction: column; justify-content: center; align-items: center;
-  text-align: center; padding: 8.5rem 6vw 2.5rem; position: relative;
+  text-align: center; padding: 8.5rem 6vw 1rem; position: relative;
 }
 .hero__kicker {
   font-size: .8rem; letter-spacing: .35em; text-transform: uppercase;
@@ -106,7 +106,7 @@ body {
 }
 
 .hero__scroll {
-  margin-top: 2.6rem;
+  margin-top: 2rem;
   display: flex; flex-direction: column; align-items: center; gap: .7rem;
   color: var(--mut); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
   animation: rise .9s .8s both cubic-bezier(.2,.7,.2,1);
@@ -129,7 +129,7 @@ body {
 .sec-sub { color: var(--mut); margin-top: .6rem; }
 
 /* ── Réalisations (masonry) ── */
-.works { padding: 4.5rem 6vw 8rem; max-width: 1300px; margin: 0 auto; }
+.works { padding: 2rem 6vw 8rem; max-width: 1300px; margin: 0 auto; }
 .works__grid {
   margin-top: 3.5rem;
   columns: 3; column-gap: 1.4rem;
